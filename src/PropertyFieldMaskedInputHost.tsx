@@ -331,12 +331,12 @@ class MaskedInput extends React.Component<IMaskedInputProps, IMaskedInputState> 
 
       return (
             <div>
-              <span style={shellStyle}>
-                <span style={shellStyleSpan}
+              <span style={shellStyle as any}>
+                <span style={shellStyleSpan as any}
                   aria-hidden="true"
                   ref="spanMask"
-                  id={props.id + 'Mask'}><i style={shellStyleSpanI}>{this.state.value}</i>{placeHolderContent}</span>
-                <input style={inputShell}
+                  id={props.id + 'Mask'}><i style={shellStyleSpanI as any}>{this.state.value}</i>{placeHolderContent}</span>
+                <input style={inputShell as any}
                 id={props.id}
                 ref="inputShell"
                 disabled={props.disabled}

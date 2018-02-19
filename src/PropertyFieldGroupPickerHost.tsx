@@ -17,7 +17,7 @@ import { Label } from 'office-ui-fabric-react/lib/Label';
 import { IPersonaProps, PersonaPresence, PersonaInitialsColor } from 'office-ui-fabric-react/lib/Persona';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 
 /**
@@ -97,7 +97,7 @@ export default class PropertyFieldGroupPickerHost extends React.Component<IPrope
         <Label>{this.props.label}</Label>
         <NormalPeoplePicker
           pickerSuggestionsProps={suggestionProps}
-          onResolveSuggestions={this.onSearchFieldChanged}
+          onResolveSuggestions={this.onSearchFieldChanged as any}
           onChange={this.onItemChanged}
           defaultSelectedItems={this.intialPersonas}
           />
@@ -137,7 +137,7 @@ export default class PropertyFieldGroupPickerHost extends React.Component<IPrope
         this.setState({ resultsPeople: this.resultsPeople, resultsPersonas: this.resultsPersonas });
         return this.resultsPersonas;
       });
-      return result;
+      return result as any;
     }
     else {
       return [];

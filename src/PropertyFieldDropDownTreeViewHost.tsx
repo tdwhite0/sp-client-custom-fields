@@ -390,10 +390,10 @@ export default class PropertyFieldDropDownTreeViewHost extends React.Component<I
       return (
         <div style={{ marginBottom: '8px'}}>
           <Label>{this.props.label}</Label>
-          <div style={fontSelect}>
-            <a style={fontSelectA} onClick={this.onOpenDialog}
+          <div style={fontSelect as any}>
+            <a style={fontSelectA as any} onClick={this.onOpenDialog}
               onMouseEnter={this.mouseEnterDropDown} onMouseLeave={this.mouseLeaveDropDown} role="menuitem">
-              <span style={fontSelectASpan}>
+              <span style={fontSelectASpan as any}>
                 {this.state.activeNodes.map((elm: IDropDownTreeViewNode, index?: number) => {
                     if (index !== undefined && index == 0) {
                       return (
@@ -408,12 +408,12 @@ export default class PropertyFieldDropDownTreeViewHost extends React.Component<I
                   })
                 }
               </span>
-              <div style={fontSelectADiv}>
+              <div style={fontSelectADiv as any}>
                 <i style={fontSelectADivB} className={carret}></i>
               </div>
             </a>
-            <div style={fsDrop}>
-              <div style={fsResults}>
+            <div style={fsDrop as any}>
+              <div style={fsResults as any}>
                 { this.state.tree.map((rootNode: IDropDownTreeViewNode, index: number) => {
                     return (
                       <Tree

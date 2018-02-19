@@ -1,6 +1,6 @@
 {
   "port": 4321,
-  "initialPage": "https://localhost:4321/temp/workbench.html",
+  "initialPage": "https://localhost:5432/workbench",
   "https": true,
   "api": {
     "port": 5432,

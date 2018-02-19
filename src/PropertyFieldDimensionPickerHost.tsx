@@ -14,7 +14,7 @@ import { Checkbox } from 'office-ui-fabric-react/lib/Checkbox';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import GuidHelper from './GuidHelper';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface
@@ -195,7 +195,7 @@ export default class PropertyFieldDimensionPickerHost extends React.Component<IP
       return;
     }
 
-    var result: string | PromiseLike<string> = this.props.onGetErrorMessage(value || '');
+    var result: string | PromiseLike<string> = this.props.onGetErrorMessage(value || '' as any);
     if (result !== undefined) {
       if (typeof result === 'string') {
         if (result === undefined || result === '')

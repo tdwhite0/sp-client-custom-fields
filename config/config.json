@@ -1,15 +1,24 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/test/TestWebPart.js",
-      "manifest": "./src/webparts/test/TestWebPart.manifest.json",
-      "outputPath": "./dist/sp-client-custom-fields.bundle.js"
+  "$schema": "https://dev.office.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "hello-world-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloWorld/HelloWorldWebPart.js",
+          "manifest": "./src/webparts/helloWorld/HelloWorldWebPart.manifest.json"
+        },
+        {
+          "entrypoint": "./lib/webparts/test/TestWebPart.js",
+          "manifest": "./src/webparts/test/TestWebPart.manifest.json"
+        }
+      ]
     }
-  ],
-  "externals": {
   },
+  "externals": {},
   "localizedResources": {
-    "sp-client-custom-fields/strings": "loc/{locale}.js",
-    "testStrings": "webparts/test/loc/{locale}.js"
+    "sp-client-custom-fieldsStrings": "lib/loc/{locale}.js",
+    "testStrings": "lib/webparts/test/loc/{locale}.js",
+    "HelloWorldWebPartStrings": "lib/webparts/helloWorld/loc/{locale}.js"
   }
 }

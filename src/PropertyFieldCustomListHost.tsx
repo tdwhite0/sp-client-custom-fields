@@ -41,7 +41,7 @@ import { IGroupType } from './PropertyFieldGroupPicker';
 import PropertyFieldOfficeVideoPickerHost from './PropertyFieldOfficeVideoPickerHost';
 import GuidHelper from './GuidHelper';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface
@@ -388,7 +388,8 @@ export default class PropertyFieldCustomListHost extends React.Component<IProper
                                 : ''
                                 }
                                 { value.type == CustomListFieldType.number ?
-                                  <input type="number" role="spinbutton" id={'input-' + value.id} aria-valuemax="99999" aria-valuemin="-999999" aria-valuenow="0" className={styles.customTextField} style={{width: '100px', marginBottom: '8px'}} />
+                          // tslint:disable-next-line:max-line-length
+                          <input type="number" role="spinbutton" id={'input-' + value.id} aria-valuemax={99999} aria-valuemin={-999999} aria-valuenow={0} className={styles.customTextField} style={{width: '100px', marginBottom: '8px'}} />
                                 : ''
                                 }
                                 { value.type == CustomListFieldType.boolean ?
@@ -564,7 +565,7 @@ export default class PropertyFieldCustomListHost extends React.Component<IProper
                     />
                   { this.state.mandatoryOpen === true ?
                     <div className="ms-MessageBar">
-                      <a name="anchorMessageBar"></a>
+                      <a></a>
                       <div className="ms-MessageBar-content">
                         <div className="ms-MessageBar-icon">
                           <i className="ms-Icon ms-Icon--Error"></i>
@@ -589,8 +590,8 @@ export default class PropertyFieldCustomListHost extends React.Component<IProper
                                   <input id={'input-' + value.id} className={styles.customTextField} style={{marginBottom: '8px'}} defaultValue={this.state.data[this.state.selectedIndex][value.id]} />
                                 : ''
                                 }
-                                { value.type == CustomListFieldType.number ?
-                                  <input type="number" role="spinbutton" id={'input-' + value.id} className={styles.customTextField} defaultValue={this.state.data[this.state.selectedIndex][value.id]} aria-valuemax="99999" aria-valuemin="-999999" aria-valuenow={this.state.data[this.state.selectedIndex][value.id]} style={{width: '100px', marginBottom: '8px'}} />
+                                { value.type as any == CustomListFieldType.number ?
+                                  <input type="number" role="spinbutton" id={'input-' + value.id} className={styles.customTextField} defaultValue={this.state.data[this.state.selectedIndex][value.id]} aria-valuemax={99999} aria-valuemin={-999999} aria-valuenow={this.state.data[this.state.selectedIndex][value.id]} style={{width: '100px', marginBottom: '8px'}} />
                                 : ''
                                 }
                                 { value.type == CustomListFieldType.boolean ?

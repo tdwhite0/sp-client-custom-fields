@@ -313,10 +313,10 @@ export default class PropertyFieldDropDownSelectHost extends React.Component<IPr
       return (
         <div style={{ marginBottom: '8px'}}>
           <Label>{this.props.label}</Label>
-          <div style={fontSelect}>
-            <a style={fontSelectA} onClick={this.onOpenDialog}
-              onMouseEnter={this.mouseEnterDropDown} onMouseLeave={this.mouseLeaveDropDown} role="menuitem">
-              <span style={fontSelectASpan}>
+          <div style={fontSelect as any}>
+            <a style={fontSelectA as any} onClick={this.onOpenDialog}
+              onMouseEnter={this.mouseEnterDropDown as any} onMouseLeave={this.mouseLeaveDropDown} role="menuitem">
+              <span style={fontSelectASpan as any}>
                 {this.props.options.map((elm: IDropdownOption, index?: number) => {
                   if (elm.isSelected) {
                     if (foundSelected == false) {
@@ -335,12 +335,12 @@ export default class PropertyFieldDropDownSelectHost extends React.Component<IPr
                 )}
                 {this.state.selectedFont}
               </span>
-              <div style={fontSelectADiv}>
+              <div style={fontSelectADiv as any}>
                 <i style={fontSelectADivB} className={carret}></i>
               </div>
             </a>
-            <div style={fsDrop}>
-              <ul style={fsResults}>
+            <div style={fsDrop as any}>
+              <ul style={fsResults as any}>
                 {this.props.options.map((font: IDropdownOption, index: number) => {
                   var backgroundColor: string = 'transparent';
                   if (this.state.hoverFont === font.text)

@@ -173,7 +173,7 @@ export default class PropertyFieldMapPickerHost extends React.Component<IPropert
         <table style={{width: '100%', borderSpacing: 0}}>
           <tbody>
             <tr>
-              <td width="100" style={{marginRight: '10px'}}>
+              <td style={{marginRight: '10px'}}>
                  <span style={{paddingBottom:'6px', display:'block', fontFamily: '"Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif',fontSize: '12px', fontWeight: 400}}>
                   Longitude
                   </span>
@@ -183,7 +183,7 @@ export default class PropertyFieldMapPickerHost extends React.Component<IPropert
                     disabled={this.props.disabled}
                     onChanged={this.onLongitudeChange} />
               </td>
-              <td width="100" style={{marginRight: '10px'}}>
+              <td style={{marginRight: '10px'}}>
                 <span style={{paddingBottom:'6px', display:'block', fontFamily: '"Segoe UI Regular WestEuropean","Segoe UI",Tahoma,Arial,sans-serif',fontSize: '12px', fontWeight: 400}}>
                 Latitude
                 </span>

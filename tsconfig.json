@@ -10,6 +10,7 @@
       "es6-promise",
       "es6-collections",
       "webpack-env"
-    ]
+    ],
+    "skipLibCheck": true
   }
 }

@@ -79,7 +79,7 @@ export default class PropertyFieldSortableListHost extends React.Component<IProp
         var currItem = this.props.selectedItems[i];
         var choice: IChoiceGroupOption = this.getStateItemFromKey(currItem);
         if (choice != null) {
-          choice.isChecked = true;
+          choice.checked = true;
         }
       }
     }
@@ -109,7 +109,7 @@ export default class PropertyFieldSortableListHost extends React.Component<IProp
         res.push(this.state.selectedKeys[i]);
     }
     this.state.selectedKeys = res;
-    this.getStateItemFromKey(element).isChecked = false;
+    this.getStateItemFromKey(element).checked = false;
     this.setState(this.state);
   }
 
@@ -125,7 +125,7 @@ export default class PropertyFieldSortableListHost extends React.Component<IProp
         this.removeSelected(value);
       }
       else {
-        this.getStateItemFromKey(value).isChecked = true;
+        this.getStateItemFromKey(value).checked = true;
         this.state.selectedKeys.push(value);
         this.setState(this.state);
       }
@@ -239,7 +239,7 @@ export default class PropertyFieldSortableListHost extends React.Component<IProp
             </div>
             {this.state.results.map((item: IChoiceGroupOption, index: number) => {
               var uniqueKey = this.props.targetProperty + '-' + item.key;
-              var checked = item.isChecked != null && item.isChecked !== undefined ? item.isChecked : false;
+              var checked = item.checked != null && item.checked !== undefined ? item.checked : false;
               return (
                 <div className="ms-ChoiceField" key={this._key + '-sortablelistpicker-' + index}>
                   <Checkbox

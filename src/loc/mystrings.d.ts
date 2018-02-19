@@ -107,7 +107,7 @@ declare interface IStrings {
   DateTimePickerTime: string;
 }
 
-declare module 'sp-client-custom-fields/strings' {
+declare module 'sp-client-custom-fieldsStrings' {
   const strings: IStrings;
   export = strings;
 }

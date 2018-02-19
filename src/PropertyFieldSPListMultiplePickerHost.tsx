@@ -97,7 +97,7 @@ export default class PropertyFieldSPListMultiplePickerHost extends React.Compone
         this.options.push({
           key: list.Id,
           text: list.Title,
-          isChecked: isSelected
+          checked: isSelected
         });
       });
       this.loaded = true;
@@ -218,7 +218,7 @@ export default class PropertyFieldSPListMultiplePickerHost extends React.Compone
               return (
                 <div className="ms-ChoiceField" key={this._key + '-multiplelistpicker-' + index}>
                   <Checkbox
-                    defaultChecked={item.isChecked}
+                    defaultChecked={item.checked}
                     disabled={this.props.disabled}
                     label={item.text}
                     onChange={this.onChanged}

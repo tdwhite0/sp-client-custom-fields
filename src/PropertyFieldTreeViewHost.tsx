@@ -183,7 +183,7 @@ export default class PropertyFieldTreeViewHost extends React.Component<IProperty
     else if (node.pictureUrl !== undefined)
       picUrl = node.pictureUrl;
     return (
-        <div style={style} onClick={this.onClickNode.bind(null, node)} name={node.id} id={node.id} role="menuitem">
+        <div style={style} onClick={this.onClickNode.bind(null, node)} id={node.id} role="menuitem">
           { checkBoxAvailable ?
                <div style={{marginRight: '5px'}}> <Checkbox
                     checked={selected}

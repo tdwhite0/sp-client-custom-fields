@@ -248,7 +248,7 @@ export default class PropertyFieldTermSetPickerHost extends React.Component<IPro
       }
     }
     return (
-        <div style={style} onClick={this.onClickNode.bind(null, node)} name={node.Guid} id={node.Guid} role="menuitem">
+        <div style={style} onClick={this.onClickNode.bind(null, node)} id={node.Guid} role="menuitem">
           { checkBoxAvailable ?
               <div style={{marginRight: '5px'}}>
                 <Checkbox
@@ -292,7 +292,7 @@ export default class PropertyFieldTermSetPickerHost extends React.Component<IPro
         <table style={{width: '100%', borderSpacing: 0}}>
           <tbody>
             <tr>
-              <td width="*">
+              <td>
                 <TextField
                   disabled={this.props.disabled}
                   style={{width:'100%'}}
@@ -301,7 +301,7 @@ export default class PropertyFieldTermSetPickerHost extends React.Component<IPro
                   value={termSetsString}
                 />
               </td>
-              <td width="32">
+              <td>
                 <IconButton disabled={this.props.disabled} iconProps={ { iconName: 'Tag' } } onClick={this.onOpenPanel} />
               </td>
             </tr>

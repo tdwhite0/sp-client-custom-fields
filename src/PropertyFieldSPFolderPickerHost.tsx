@@ -18,7 +18,7 @@ import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
 import { List } from 'office-ui-fabric-react/lib/List';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface
@@ -309,14 +309,14 @@ export default class PropertyFieldSPFolderPickerHost extends React.Component<IPr
          <table style={{width: '100%', borderSpacing: 0}}>
           <tbody>
             <tr>
-              <td width="*">
+              <td>
                 <TextField
                   disabled={this.props.disabled}
                   style={{width:'100%'}}
                   readOnly={true}
                   value={this.state.confirmFolder} />
               </td>
-              <td width="64">
+              <td>
                 <table style={{width: '100%', borderSpacing: 0}}>
                   <tbody>
                     <tr>

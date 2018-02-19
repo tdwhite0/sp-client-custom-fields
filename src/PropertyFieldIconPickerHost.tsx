@@ -1024,19 +1024,19 @@ export default class PropertyFieldIconPickerHost extends React.Component<IProper
       return (
         <div style={{ marginBottom: '8px'}}>
           <Label>{this.props.label}</Label>
-          <div style={fontSelect}>
-            <a style={fontSelectA} onClick={this.onOpenDialog}
+          <div style={fontSelect as any}>
+            <a style={fontSelectA as any} onClick={this.onOpenDialog}
               onMouseEnter={this.mouseEnterDropDown} onMouseLeave={this.mouseLeaveDropDown} role="menuitem">
-              <span style={fontSelectASpan}>
+              <span style={fontSelectASpan as any}>
                 <i className={'ms-Icon ms-Icon--' + this.state.selectedFont} aria-hidden="true" style={{marginRight:'10px'}}></i>
                 {this.state.selectedFont}
               </span>
-              <div style={fontSelectADiv}>
+              <div style={fontSelectADiv as any}>
                 <i style={fontSelectADivB} className={carret}></i>
               </div>
             </a>
-            <div style={fsDrop}>
-              <ul style={fsResults}>
+            <div style={fsDrop as any}>
+              <ul style={fsResults as any}>
                 {this.fonts.map((font: ISafeFont, index: number) => {
                   var backgroundColor: string = 'transparent';
                   if (this.state.selectedFont === font.Name)

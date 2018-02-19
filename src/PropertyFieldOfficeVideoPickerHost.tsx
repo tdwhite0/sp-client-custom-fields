@@ -253,7 +253,7 @@ export default class PropertyFieldOfficeVideoPickerHost extends React.Component<
         <table style={{width: '100%', borderSpacing: 0}}>
           <tbody>
             <tr>
-              <td width="*">
+              <td>
                 <TextField
                   disabled={this.props.disabled}
                   value={this.state.selectedVideo}
@@ -262,7 +262,7 @@ export default class PropertyFieldOfficeVideoPickerHost extends React.Component<
                   readOnly={this.props.readOnly}
                 />
               </td>
-              <td width="64">
+              <td>
                 <table style={{width: '100%', borderSpacing: 0}}>
                   <tbody>
                     <tr>

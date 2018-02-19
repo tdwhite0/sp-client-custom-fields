@@ -1,3 +1,32 @@
+declare global {
+  namespace React {
+    class Component<P, S> {
+      constructor(props?: P, context?: any);
+
+      // Disabling unified-signatures to have separate overloads. It's easier to understand this way.
+      // tslint:disable:unified-signatures
+      setState<K extends keyof S>(f: (prevState: S, props: P) => Pick<S, K>, callback?: () => any): void;
+      setState<K extends keyof S>(state: Pick<S, K>, callback?: () => any): void;
+      // tslint:enable:unified-signatures
+
+      forceUpdate(callBack?: () => any): void;
+      render(): JSX.Element | null | false;
+
+      // React.Props<T> is now deprecated, which means that the `children`
+      // property is not available on `P` by default, even though you can
+      // always pass children as variadic arguments to `createElement`.
+      // In the future, if we can define its call signature conditionally
+      // on the existence of `children` in `P`, then we should remove this.
+      props: Readonly<{ children?: ReactNode }> & Readonly<P>;
+      state: Readonly<S>| any;
+      context: any;
+      refs: {
+          [key: string]: ReactInstance
+      };
+    }
+  }
+}
+
 /**
  * @file PropertyFieldAlignPicker.ts
  * Define a custom field of type PropertyFieldAlignPicker for
@@ -14,6 +43,7 @@ import {
   IPropertyPaneCustomFieldProps
 } from '@microsoft/sp-webpart-base';
 import PropertyFieldAlignPickerHost, { IPropertyFieldAlignPickerHostProps } from './PropertyFieldAlignPickerHost';
+import { ReactNode, ReactInstance } from 'react';
 
 /**
  * @interface
@@ -77,12 +107,12 @@ export interface IPropertyFieldAlignPickerProps {
    *   - The rejected, the value is thrown away.
    *
    */
-   onGetErrorMessage?: (value: string) => string | Promise<string>;
-   /**
-    * Custom Field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
-    * Default value is 200.
-    */
-   deferredValidationTime?: number;
+  onGetErrorMessage?: (value: string) => string | Promise<string>;
+  /**
+   * Custom Field will start to validate after users stop typing for `deferredValidationTime` milliseconds.
+   * Default value is 200.
+   */
+  deferredValidationTime?: number;
 }
 
 /**
@@ -201,25 +231,25 @@ class PropertyFieldAlignPickerBuilder implements IPropertyPaneField<IPropertyFie
  */
 export function PropertyFieldAlignPicker(targetProperty: string, properties: IPropertyFieldAlignPickerProps): IPropertyPaneField<IPropertyFieldAlignPickerPropsInternal> {
 
-    //Create an internal properties object from the given properties
-    var newProperties: IPropertyFieldAlignPickerPropsInternal = {
-      label: properties.label,
-      targetProperty: targetProperty,
-      initialValue: properties.initialValue,
-      onPropertyChanged: properties.onPropertyChanged,
-      properties: properties.properties,
-      onDispose: null,
-      onRender: null,
-      key: properties.key,
-      disabled: properties.disabled,
-      onGetErrorMessage: properties.onGetErrorMessage,
-      deferredValidationTime: properties.deferredValidationTime,
-      render: properties.render,
-      disableReactivePropertyChanges: properties.disableReactivePropertyChanges
-    };
-    //Calls the PropertyFieldAlignPicker builder object
-    //This object will simulate a PropertyFieldCustom to manage his rendering process
-    return new PropertyFieldAlignPickerBuilder(targetProperty, newProperties);
+  //Create an internal properties object from the given properties
+  var newProperties: IPropertyFieldAlignPickerPropsInternal = {
+    label: properties.label,
+    targetProperty: targetProperty,
+    initialValue: properties.initialValue,
+    onPropertyChanged: properties.onPropertyChanged,
+    properties: properties.properties,
+    onDispose: null,
+    onRender: null,
+    key: properties.key,
+    disabled: properties.disabled,
+    onGetErrorMessage: properties.onGetErrorMessage,
+    deferredValidationTime: properties.deferredValidationTime,
+    render: properties.render,
+    disableReactivePropertyChanges: properties.disableReactivePropertyChanges
+  };
+  //Calls the PropertyFieldAlignPicker builder object
+  //This object will simulate a PropertyFieldCustom to manage his rendering process
+  return new PropertyFieldAlignPickerBuilder(targetProperty, newProperties);
 }
 
 

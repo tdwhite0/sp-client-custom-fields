@@ -13,7 +13,7 @@ import { Panel, PanelType } from 'office-ui-fabric-react/lib/Panel';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface
@@ -270,7 +270,7 @@ export default class PropertyFieldPicturePickerHost extends React.Component<IPro
          <table style={{width: '100%', borderSpacing: 0}}>
           <tbody>
             <tr>
-              <td width="*">
+              <td>
                 <TextField
                   disabled={this.props.disabled}
                   value={this.state.selectedImage}
@@ -279,7 +279,7 @@ export default class PropertyFieldPicturePickerHost extends React.Component<IPro
                   readOnly={this.props.readOnly}
                 />
               </td>
-              <td width="64">
+              <td>
                 <table style={{width: '100%', borderSpacing: 0}}>
                   <tbody>
                     <tr>

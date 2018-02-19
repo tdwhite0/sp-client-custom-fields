@@ -49,11 +49,11 @@ export default class PropertyFieldSliderRangeHost extends React.Component<IPrope
         <table style={{paddingTop: '8px', paddingBottom: '10px', width:"100%"}} cellPadding="0" cellSpacing="10">
         <tbody>
         { this.props.showValue == false ?
-            <tr><td width="100%"><div id={this.props.guid + '-slider'}></div></td></tr>
+            <tr><td><div id={this.props.guid + '-slider'}></div></td></tr>
           :
             this.props.orientation == 'vertical' ?
               <tr>
-                <td width="100%">
+                <td>
                   <div className="ms-Label" style={{marginBottom:'8px'}} id={this.props.guid + '-max'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[1] : '0' }</div>
                   <div id={this.props.guid + '-slider'}></div>
                   <div className="ms-Label" style={{marginTop:'8px'}} id={this.props.guid + '-min'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[0] : '0' }</div>
@@ -61,9 +61,9 @@ export default class PropertyFieldSliderRangeHost extends React.Component<IPrope
               </tr>
             :
               <tr>
-                <td width="35"><div className="ms-Label" id={this.props.guid + '-min'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[0] : '0' }</div></td>
-                <td width="220"><div id={this.props.guid + '-slider'}></div></td>
-                <td width="35" style={{textAlign: 'right'}}><div className="ms-Label" id={this.props.guid + '-max'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[1] : '0' }</div></td>
+                <td><div className="ms-Label" id={this.props.guid + '-min'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[0] : '0' }</div></td>
+                <td><div id={this.props.guid + '-slider'}></div></td>
+                <td style={{textAlign: 'right'}}><div className="ms-Label" id={this.props.guid + '-max'}>{(this.props.initialValue != null && this.props.initialValue != '' && this.props.initialValue.split(",").length == 2) ? this.props.initialValue.split(",")[1] : '0' }</div></td>
               </tr>
         }
         </tbody>

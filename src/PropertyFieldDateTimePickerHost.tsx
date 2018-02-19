@@ -11,7 +11,7 @@ import { DatePicker, IDatePickerStrings } from 'office-ui-fabric-react/lib/DateP
 import { Label } from 'office-ui-fabric-react/lib/Label';
 import { Dropdown, IDropdownOption } from 'office-ui-fabric-react/lib/Dropdown';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface
@@ -298,7 +298,7 @@ export default class PropertyFieldDateTimePickerHost extends React.Component<IPr
     return (
       <div>
         <Label>{this.props.label}</Label>
-        <table cellPadding="0" cellSpacing="0" width="100%" style={{marginTop: '10px'}}>
+        <table cellPadding="0" cellSpacing="0" style={{marginTop: '10px'}}>
           <tbody>
             <tr>
               <td style={{verticalAlign: 'top'}}><Label style={{marginRight: '4px'}}>{strings.DateTimePickerDate}</Label></td>
@@ -314,20 +314,20 @@ export default class PropertyFieldDateTimePickerHost extends React.Component<IPr
                 <table cellPadding="0" cellSpacing="0">
                   <tbody>
                     <tr>
-                      <td width="79">
+                      <td>
                         <Dropdown
                           label=""
                           options={hours} onChanged={this.dropdownHoursChanged}
                           />
                       </td>
-                      <td width="4" style={{paddingLeft: '2px', paddingRight: '2px'}}><Label>:</Label></td>
-                      <td width="71">
+                      <td style={{paddingLeft: '2px', paddingRight: '2px'}}><Label>:</Label></td>
+                      <td>
                         <Dropdown
                           label=""
                           options={minutes} onChanged={this.dropdownMinutesChanged} />
                       </td>
-                      <td width="4" style={{paddingLeft: '2px', paddingRight: '2px'}}><Label>:</Label></td>
-                      <td width="71">
+                      <td style={{paddingLeft: '2px', paddingRight: '2px'}}><Label>:</Label></td>
+                      <td>
                         <Dropdown
                           label=""
                           options={seconds} onChanged={this.dropdownSecondsChanged} />

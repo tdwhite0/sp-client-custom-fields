@@ -9,7 +9,7 @@ import * as React from 'react';
 import { IPropertyFieldDatePickerPropsInternal } from './PropertyFieldDatePicker';
 import { DatePicker, IDatePickerStrings } from 'office-ui-fabric-react/lib/DatePicker';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface

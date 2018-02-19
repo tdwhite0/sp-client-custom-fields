@@ -19,7 +19,7 @@ import { CommandButton, IButtonProps } from 'office-ui-fabric-react/lib/Button';
 import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
 import { Async } from 'office-ui-fabric-react/lib/Utilities';
 
-import * as strings from 'sp-client-custom-fields/strings';
+import * as strings from 'sp-client-custom-fieldsStrings';
 
 /**
  * @interface

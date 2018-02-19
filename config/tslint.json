@@ -12,6 +12,7 @@
   "lintConfig": {
     // Opt-in to Lint rules which help to eliminate bugs in JavaScript
     "rules": {
+      "max-line-lenth": false,
       "class-name": false,
       "export-name": false,
       "forin": false,
